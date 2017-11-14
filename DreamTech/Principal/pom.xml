@@ -22,4 +22,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <modules>
+  	<module>Identificacion</module>
+  </modules>
 </project>
