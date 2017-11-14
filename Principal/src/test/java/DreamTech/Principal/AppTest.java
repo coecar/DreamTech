@@ -1,4 +1,4 @@
-package DreamTech.DreamTech;
+package DreamTech.Principal;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

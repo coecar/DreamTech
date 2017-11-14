@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>DreamTech</groupId>
-  <artifactId>DreamTech</artifactId>
+  <artifactId>Principal</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
-  <name>DreamTech</name>
+  <name>Principal</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -22,7 +22,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <modules>
-  	<module>Login</module>
-  </modules>
 </project>
