@@ -56,10 +56,9 @@ public class GestorCanciones {
 	public int insert(Cancion c) throws SQLException{
 		String sql = "INSERT INTO usuarios(Nick,Nombre,Apellido,Password) VALUES(?,?,?,?)";
 		PreparedStatement pst = agenteBD.getConection().prepareStatement(sql);
-		pst.setString(1, u.getNick());
-		pst.setString(2, u.getNombre());
-		pst.setString(3, u.getApellido());
-		pst.setString(4, u.getPassword());
+		pst.setString(1, c.getNombre());
+		pst.setString(2, c.getArtista());
+		pst.setDouble(3, c.getPrecio());
 		
 		int resultado = agenteBD.insert(pst);
 		return resultado;
