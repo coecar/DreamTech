@@ -10,7 +10,7 @@
 	public class Usuario {
 		protected String Nick;
 		protected String Nombre;
-		protected String Apellido;
+		protected String Email;
 		protected String Password;
 		protected GestorUsuarios gestorUsuarios;
 		
@@ -18,10 +18,10 @@
 			gestorUsuarios = new GestorUsuarios();
 		}
 		
-		public Usuario(String Nick, String Nombre, String Apellido, String Password){
+		public Usuario(String Nick, String Nombre, String Email, String Password){
 			this.Nick=Nick;
 			this.Nombre=Nombre;
-			this.Apellido=Apellido;
+			this.Email=Email;
 			this.Password=Password;
 			gestorUsuarios = new GestorUsuarios();
 		}
@@ -47,12 +47,12 @@
 			Nombre = nombre;
 		}
 
-		public String getApellido() {
-			return Apellido;
+		public String getEmail() {
+			return Email;
 		}
 
-		public void setApellido(String apellido) {
-			Apellido = apellido;
+		public void setEmail(String email) {
+			Email = email;
 		}
 
 		public String getPassword() {

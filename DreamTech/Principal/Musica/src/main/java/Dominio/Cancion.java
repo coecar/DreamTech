@@ -62,21 +62,22 @@ package Dominio;
 		public void setGestorCanciones(GestorCanciones gestorCanciones) {
 			this.gestorCanciones = gestorCanciones;
 		}
-
-		public Usuario leerUsuario() throws SQLException {
-			return gestorUsuarios.read(this.Nick);
+		
+		public Cancion leerCancion() throws SQLException {
+			return gestorCanciones.read(this.Nombre);
 		}
 		
-		public List<Usuario> leerTodos() throws SQLException {
-			return gestorUsuarios.readAll();
+		public List<Cancion> leerTodos() throws SQLException {
+			return gestorCanciones.readAll();
 		}
-		public boolean comprobar(String pass){
+		
+		/*public boolean comprobar(String pass){
 			return (this.Password.equals(pass));
 			
-		}
+		}*/
 		
 		public int insertar() throws SQLException{
-			return gestorUsuarios.insert(this);
+			return gestorCanciones.insert(this);
 		}
 	}
 
