@@ -26,5 +26,6 @@
   	<module>Identificacion</module>
     <module>Canciones</module>
     <module>Musica</module>
+    <module>Pagos</module>
   </modules>
 </project>

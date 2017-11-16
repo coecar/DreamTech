@@ -5,23 +5,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Dominio.Cancion;
+import Dominio.Album;
 
-public class GestorCanciones {
+public class GestorAlbums {
 	private Agente agenteBD;
-	private List<Cancion> canciones;
+	private List<Album> albums;
 	
-	public GestorCanciones() {
-		canciones = new ArrayList<>();
+	public GestorAlbums() {
+		albums = new ArrayList<>();
 		agenteBD = Agente.getAgente();
 	}
 	
-	public Cancion read(String Nombre) throws SQLException {
+	public Album read(String Nombre) throws SQLException {
 		String sql = "SELECT * FROM usuarios WHERE Nick = '"+Nombre+"';";
 		String Artista = null;
 		double Precio = 0;
 		int id=0;
-		Cancion cancion;
+		Album album;
 		ResultSet rs;
 		
 		rs = agenteBD.read(sql);
@@ -32,10 +32,10 @@ public class GestorCanciones {
 			Precio = rs.getDouble("Precio");
 		}
 		
-		return cancion=new Cancion(Nombre,Artista,Precio);
+		return album = new Album(Nombre,Artista,Precio);
 	}
 	
-	public List<Cancion> readAll() throws SQLException {
+	public List<Album> readAll() throws SQLException {
 		String sql = "SELECT * FROM usuarios";
 		String Nombre = null, Artista = null;
 		Double Precio;
@@ -47,25 +47,25 @@ public class GestorCanciones {
 			Nombre = rs.getString("Nombre");
 			Artista = rs.getString("Artista");
 			Precio = rs.getDouble("Precio");
-			canciones.add(new Cancion(Nombre,Artista,Precio));
+			albums.add(new Album(Nombre,Artista,Precio));
 		}
 		
-		return canciones;
+		return albums;
 	}
 	
-	public int insert(Cancion c) throws SQLException{
+	public int insert(Album a) throws SQLException{
 		String sql = "INSERT INTO usuarios(Nick,Nombre,Apellido,Password) VALUES(?,?,?,?)";
 		PreparedStatement pst = agenteBD.getConection().prepareStatement(sql);
-		pst.setString(1, c.getNombre());
-		pst.setString(2, c.getArtista());
-		pst.setDouble(3, c.getPrecio());
+		pst.setString(1, a.getNombre());
+		pst.setString(2, a.getArtista());
+		pst.setDouble(3, a.getPrecio());
 		
 		int resultado = agenteBD.insert(pst);
 		return resultado;
 	}
 	
-	public int delete(Cancion c) throws SQLException{
-		String sql = "DELETE FROM canciones WHERE Nombre="+c.getNombre();
+	public int delete(Album a) throws SQLException{
+		String sql = "DELETE FROM albums WHERE Nombre="+a.getNombre();
 		PreparedStatement pst = agenteBD.getConection().prepareStatement(sql);
 		int resultado = agenteBD.delete(sql); //MIRAR A VER SI SE BORRAN ASI DE LA BASE DE DATOS PQ NO ESTOY SEGURO
 		return resultado;
