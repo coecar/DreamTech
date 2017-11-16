@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import Dominio.Album;
 import Dominio.Usuario;
 
 public class GestorUsuarios {
@@ -67,6 +68,14 @@ public class GestorUsuarios {
 		pst.setString(4, u.getPassword());
 		
 		int resultado = agenteBD.insert(pst);
+		return resultado;
+	}
+	
+	
+	public int delete(Usuario u) throws SQLException{
+		String sql = "DELETE FROM usuarios WHERE Nombre="+u.getNick();
+		PreparedStatement pst = agenteBD.getConection().prepareStatement(sql);
+		int resultado = agenteBD.delete(sql); //MIRAR A VER SI SE BORRAN ASI DE LA BASE DE DATOS PQ NO ESTOY SEGURO
 		return resultado;
 	}
 
