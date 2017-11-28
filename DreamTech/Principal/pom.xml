@@ -27,5 +27,8 @@
     <module>Canciones</module>
     <module>Musica</module>
     <module>Pagos</module>
+    <module>It1</module>
+    <module>It2</module>
+    <module>It3</module>
   </modules>
 </project>
