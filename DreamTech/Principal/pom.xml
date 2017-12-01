@@ -30,5 +30,6 @@
     <module>It1</module>
     <module>It2</module>
     <module>It3</module>
+    <module>it4</module>
   </modules>
 </project>
