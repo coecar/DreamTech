@@ -1,0 +1,5 @@
+Persistencia\Agente.class
+Persistencia\GestorAlbums.class
+Dominio\Cancion.class
+Dominio\Album.class
+Persistencia\GestorCanciones.class
