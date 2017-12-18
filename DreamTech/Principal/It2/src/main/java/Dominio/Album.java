@@ -11,18 +11,18 @@ public class Album {
 	protected double Precio;
 	protected GestorAlbums gestorAlbums;
 
-	public Album(){
+	public Album() throws ClassNotFoundException{
 		gestorAlbums = new GestorAlbums();
 	}
 	
-	public Album(String Nombre, String Artista, double Precio){
+	public Album(String Nombre, String Artista, double Precio) throws ClassNotFoundException{
 		this.Nombre=Nombre;
 		this.Artista=Artista;
 		this.Precio=Precio;
 		gestorAlbums = new GestorAlbums();
 	}
 	
-	public Album(String Nombre){
+	public Album(String Nombre) throws ClassNotFoundException{
 		this.Nombre=Nombre;
 		gestorAlbums = new GestorAlbums();
 	}

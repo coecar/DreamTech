@@ -4,19 +4,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import Dominio.Album;
 
 public class GestorAlbums {
 	private Agente agenteBD;
 	private List<Album> albums;
 	
-	public GestorAlbums() {
-		albums = new ArrayList<>();
+	public GestorAlbums() throws ClassNotFoundException {
+		albums = new ArrayList<Album>();
 		agenteBD = Agente.getAgente();
 	}
 	
-	public Album read(String Nombre) throws SQLException {
+	public Album read(String Nombre) throws SQLException, ClassNotFoundException {
 		String sql = "SELECT * FROM usuarios WHERE Nick = '"+Nombre+"';";
 		String Artista = null;
 		double Precio = 0;
@@ -35,7 +34,7 @@ public class GestorAlbums {
 		return album = new Album(Nombre,Artista,Precio);
 	}
 	
-	public List<Album> readAll() throws SQLException {
+	public List<Album> readAll() throws SQLException, ClassNotFoundException {
 		String sql = "SELECT * FROM usuarios";
 		String Nombre = null, Artista = null;
 		Double Precio;

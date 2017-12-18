@@ -13,19 +13,19 @@ class Agente {
 	private String driver = "com.mysql.jdbc.Driver";
 	private String url = "jdbc:mysql://localhost:3306/"+nombreBD;
 	
-	private Agente() {
+	private Agente() throws ClassNotFoundException {
 		try {
 			Class.forName(driver);
 			connection = DriverManager.getConnection(url, "root", "");
 			System.out.println("Hola");
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Fallo al conectar con BD");
 			e.printStackTrace();
 		}
 	}
 	
-	public static Agente getAgente() {
+	public static Agente getAgente() throws ClassNotFoundException {
 		if (yo==null)
 			yo=new Agente();
 		return yo;

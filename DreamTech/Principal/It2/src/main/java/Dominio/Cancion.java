@@ -13,18 +13,18 @@ package Dominio;
 		protected double Precio;
 		protected GestorCanciones gestorCanciones;
 
-		public Cancion(){
+		public Cancion() throws ClassNotFoundException{
 			gestorCanciones = new GestorCanciones();
 		}
 		
-		public Cancion(String Nombre, String Artista, double Precio){
+		public Cancion(String Nombre, String Artista, double Precio) throws ClassNotFoundException{
 			this.Nombre=Nombre;
 			this.Artista=Artista;
 			this.Precio=Precio;
 			gestorCanciones = new GestorCanciones();
 		}
 		
-		public Cancion (String Nombre){
+		public Cancion (String Nombre) throws ClassNotFoundException{
 			this.Nombre=Nombre;
 			gestorCanciones = new GestorCanciones();
 		}
@@ -63,11 +63,11 @@ package Dominio;
 			this.gestorCanciones = gestorCanciones;
 		}
 		
-		public Cancion leerCancion() throws SQLException {
+		public Cancion leerCancion() throws SQLException, ClassNotFoundException {
 			return gestorCanciones.read(this.Nombre);
 		}
 		
-		public List<Cancion> leerTodos() throws SQLException {
+		public List<Cancion> leerTodos() throws SQLException, ClassNotFoundException {
 			return gestorCanciones.readAll();
 		}
 		

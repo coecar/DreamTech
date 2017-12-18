@@ -1,4 +1,4 @@
- 	package Dominio;
+package DreamTech.Principal.It1.src.main.Dominio;
 
 	import java.sql.SQLException;
 	import java.util.List;

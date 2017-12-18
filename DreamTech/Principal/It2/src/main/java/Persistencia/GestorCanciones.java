@@ -11,12 +11,12 @@ public class GestorCanciones {
 	private Agente agenteBD;
 	private List<Cancion> canciones;
 	
-	public GestorCanciones() {
-		canciones = new ArrayList<>();
+	public GestorCanciones() throws ClassNotFoundException {
+		canciones = new ArrayList<Cancion>();
 		agenteBD = Agente.getAgente();
 	}
 	
-	public Cancion read(String Nombre) throws SQLException {
+	public Cancion read(String Nombre) throws SQLException, ClassNotFoundException {
 		String sql = "SELECT * FROM usuarios WHERE Nick = '"+Nombre+"';";
 		String Artista = null;
 		double Precio = 0;
@@ -35,7 +35,7 @@ public class GestorCanciones {
 		return cancion=new Cancion(Nombre,Artista,Precio);
 	}
 	
-	public List<Cancion> readAll() throws SQLException {
+	public List<Cancion> readAll() throws SQLException, ClassNotFoundException {
 		String sql = "SELECT * FROM usuarios";
 		String Nombre = null, Artista = null;
 		Double Precio;

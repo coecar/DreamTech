@@ -13,7 +13,7 @@ package Dominio;
 		protected double Saldo;
 		protected GestorPagos gestorPagos;
 		
-		public PayPal(){
+		public PayPal() throws ClassNotFoundException{
 			gestorPagos = new GestorPagos();
 		}
 		
@@ -23,7 +23,7 @@ package Dominio;
 			this.Saldo= Saldo;
 		}
 		
-		public PayPal (int ID){
+		public PayPal (int ID) throws ClassNotFoundException{
 			this.ID = ID;
 			gestorPagos = new GestorPagos();
 		}
