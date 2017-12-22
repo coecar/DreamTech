@@ -1,83 +1,138 @@
 package Dominio;
 
-	import java.sql.SQLException;
-	import java.util.List;
-
-	//import com.mysql.jdbc.util.PropertiesDocGenerator;
-
-	import Persistencia.GestorCanciones;
-
-	public class Cancion {
-		protected String Nombre;
-		protected String Artista;
-		protected double Precio;
-		protected GestorCanciones gestorCanciones;
-
-		public Cancion() throws ClassNotFoundException{
-			gestorCanciones = new GestorCanciones();
-		}
-		
-		public Cancion(String Nombre, String Artista, double Precio) throws ClassNotFoundException{
-			this.Nombre=Nombre;
-			this.Artista=Artista;
-			this.Precio=Precio;
-			gestorCanciones = new GestorCanciones();
-		}
-		
-		public Cancion (String Nombre) throws ClassNotFoundException{
-			this.Nombre=Nombre;
-			gestorCanciones = new GestorCanciones();
-		}
-
-
-		
-		public String getNombre() {
-			return Nombre;
-		}
-
-		public void setNombre(String nombre) {
-			Nombre = nombre;
-		}
-
-		public String getArtista() {
-			return Artista;
-		}
-
-		public void setArtista(String artista) {
-			Artista = artista;
-		}
-
-		public double getPrecio() {
-			return Precio;
-		}
-
-		public void setPrecio(double precio) {
-			Precio = precio;
-		}
-
-		public GestorCanciones getGestorCanciones() {
-			return gestorCanciones;
-		}
-
-		public void setGestorCanciones(GestorCanciones gestorCanciones) {
-			this.gestorCanciones = gestorCanciones;
-		}
-		
-		public Cancion leerCancion() throws SQLException, ClassNotFoundException {
-			return gestorCanciones.read(this.Nombre);
-		}
-		
-		public List<Cancion> leerTodos() throws SQLException, ClassNotFoundException {
-			return gestorCanciones.readAll();
-		}
-		
-		/*public boolean comprobar(String pass){
-			return (this.Password.equals(pass));
-			
-		}*/
-		
-		public int insertar() throws SQLException{
-			return gestorCanciones.insert(this);
-		}
+import java.sql.SQLException;
+import java.util.List;
+import Persistencia.GestorCanciones;
+/**
+ * @author Miguel de la cal, Carlos Coello, Miguel Ángel García,
+ * Werselio Escribano.
+ */
+public class Cancion {
+	/**
+	 * String con el nombre de la cancion.
+	 */
+	protected String nombre;
+	/**
+	 * String con el nombre del artista.
+	 */
+	protected String artista;
+	/**
+	 * Double con el precio de la cancion. 
+	 */
+	protected double precio;
+	/**
+	 * Variable que almacena el gestor.
+	 */
+	protected GestorCanciones gestorCanciones;
+	/**
+	 * Metodo constructor.
+	 * @throws ClassNotFoundException  Excepcion de Clase.
+	 */
+	public Cancion() throws ClassNotFoundException {
+		gestorCanciones = new GestorCanciones();
 	}
-
+	/**
+	 * Metodo constructor para la cancion.
+	 * @param Nombre de la cancion.
+	 * @param Artista nombre del artista.
+	 * @param Precio precio de la cancion.
+	 * @throws ClassNotFoundException  Excepcion de Clase.
+	 */
+	public Cancion(String Nombre, String Artista, double Precio) throws ClassNotFoundException {
+		this.nombre = Nombre;
+		this.artista = Artista;
+		this.precio = Precio;
+		gestorCanciones = new GestorCanciones();
+	}
+	/**
+	 * Metodo costructor para crear una cancion.
+	 * @param Nombre de la cancion.
+	 * @throws ClassNotFoundException  Excepcion de Clase.
+	 */
+	public Cancion(String Nombre) throws ClassNotFoundException {
+		this.nombre = Nombre;
+		gestorCanciones = new GestorCanciones();
+	}
+	/**
+	 * Metodo usado para devolver el nombre.
+	 * @return nombre de la canción.
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+	/**
+	 * Metodo que se usa para cambiar el nombre de una cancion.
+	 * @param nombre de la canción a cambiar.
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	/**
+	 * Metodo que se usa para obtener el nombre del artista.
+	 * @return nombre del artista.
+	 */
+	public String getArtista() {
+		return artista;
+	}
+	/**
+	 * Metodo para cambiar el nombre del artista.
+	 * @param artista nombre del artista a cambiar.
+	 */
+	public void setArtista(String artista) {
+		this.artista = artista;
+	}
+	/**
+	 * Metodo para obtener el precio de una cancion.
+	 * @return precio de la canción.
+	 */
+	public double getPrecio() {
+		return precio;
+	}
+	/**
+	 * Metodo para cambiar el precio de una cancion.
+	 * @param precio del disco.
+	 */
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	/**
+	 * Metodo para devolver canciones.
+	 * @return gestorCanciones es el gestor.
+	 */
+	public GestorCanciones getGestorCanciones() {
+		return gestorCanciones;
+	}
+	/**
+	 * Metodo para asginar el gestor.
+	 * @param gestorCanciones a asginar al parametro.
+	 */
+	public void setGestorCanciones(GestorCanciones gestorCanciones) {
+		this.gestorCanciones = gestorCanciones;
+	}
+	/**
+	 * Método para leer una canción de la base de datos. 
+	 * @return Devuelve el resultado de ejecutar el metodo read del gestor.
+	 * @throws SQLException Excepción de base de datos.
+	 * @throws ClassNotFoundException  Excepcion de Clase.
+	 */
+	public Cancion leerCancion() throws SQLException, ClassNotFoundException {
+		return gestorCanciones.read(this.getNombre());
+	}
+	/**
+	 * Metodo para leer todos los elementos de la base de datos.
+	 * @return Devuelve el resultado de ejecutar el metodo readAll del gestor.
+	 * @throws SQLException Excepción de base de datos.
+	 * @throws ClassNotFoundException  Excepcion de Clase.
+	 */
+	public List<Cancion> leerTodos() throws SQLException, ClassNotFoundException {
+		return gestorCanciones.readAll();
+	}
+	/**
+	 * Metodo para insertar una canción en la base de datos.s
+	 * @return Devuelve el resultado de ejecutar el metodo insert del gestor.
+	 * @throws SQLException Excepción de base de datos.
+	 */
+	public int insertar() throws SQLException {
+		return gestorCanciones.insert(this);
+	}
+}

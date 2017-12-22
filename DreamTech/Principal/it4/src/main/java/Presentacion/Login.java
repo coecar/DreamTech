@@ -10,7 +10,12 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * 
+ * @author Werselio Escribano, Miguel de la Cal, Carlos Coello,
+ * Miguel Angel García.
+ *
+ */
 public class Login {
 
 	private JFrame frame;
@@ -24,6 +29,7 @@ public class Login {
 
 	/**
 	 * Launch the application.
+	 * @param args parametros por defecto.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -82,7 +88,15 @@ public class Login {
 			frame.getContentPane().add(btnConectar);
 		}
 	}
+	/**
+	 * 
+	 * @author Werselio, Miguel, Carlos, Miguel Ángel.
+	 *
+	 */
 	private class BtnConectarActionListener implements ActionListener {
+		/**
+		 * Metodo para controlar la acción del boton conectar.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			
 			if(tfUsuario.getText() == "Dreamtech" && password == "B103"){

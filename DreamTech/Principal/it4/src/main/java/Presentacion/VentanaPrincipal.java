@@ -1,21 +1,25 @@
 package Presentacion;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 
+/**
+ * 
+ * @author Werselio Escribano, Miguel de la Cal, Carlos Coello, Miguel Angel
+ *         García.
+ *
+ */
 public class VentanaPrincipal extends JFrame {
-
 	private JPanel contentPane;
 	private final JLabel lblNewLabel = new JLabel("¡Bienvenido al sistema!");
 
 	/**
 	 * Launch the application.
+	 * @param args parametro por defecto.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -29,7 +33,6 @@ public class VentanaPrincipal extends JFrame {
 			}
 		});
 	}
-
 	/**
 	 * Create the frame.
 	 */
@@ -47,5 +50,4 @@ public class VentanaPrincipal extends JFrame {
 			contentPane.add(lblNewLabel);
 		}
 	}
-
 }
