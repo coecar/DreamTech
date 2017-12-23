@@ -22,7 +22,7 @@ public class VentanaPrincipal {
 	private final JLabel lblTitulo = new JLabel("Titulo:");
 	private final JLabel lblAutor = new JLabel("Autor: ");
 	private final JLabel lblRellenaTitulo = new JLabel("(Titulo de la cancion)");
-	private final JLabel lblRellenaAutor = new JLabel("(Autor de la cancion)");
+	private final JLabel lblRellenaAutor = new JLabel("(Autor de la cancin)");
 	private final JLabel lblTiempoTranscurrido = new JLabel("(Tiempo transcurrido)");
 	private final JLabel lblduracion = new JLabel("/(Duracion)");
 
