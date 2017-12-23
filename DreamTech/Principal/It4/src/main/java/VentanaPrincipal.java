@@ -28,6 +28,7 @@ public class VentanaPrincipal {
 	public VentanaPrincipal() {
 		initialize();
 	}
+	
 
 	/**
 	 * Initialize the contents of the frame.

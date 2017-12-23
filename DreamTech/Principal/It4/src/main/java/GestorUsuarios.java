@@ -17,8 +17,7 @@ public class GestorUsuarios {
 		
 		for(int i=0; i<numUsuarios;i++){
 			String Nick = br.readLine();
-			String Pass = br.readLine();
-			
+			String Pass = br.readLine();		
 			Usuario usuario = new Usuario(Nick,Pass);
 			usuarios[i]=usuario;
 		}

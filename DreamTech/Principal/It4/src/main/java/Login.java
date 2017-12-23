@@ -40,6 +40,7 @@ public class Login {
 		initialize();
 	}
 
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */

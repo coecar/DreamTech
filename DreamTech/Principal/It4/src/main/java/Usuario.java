@@ -28,6 +28,7 @@ public class Usuario {
 	public GestorUsuarios getGestorUsuarios() {
 		return gestorUsuarios;
 	}
+	
 
 	public void setGestorUsuarios(GestorUsuarios gestorUsuarios) {
 		this.gestorUsuarios = gestorUsuarios;
