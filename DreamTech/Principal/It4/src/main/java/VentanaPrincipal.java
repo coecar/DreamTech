@@ -1,10 +1,8 @@
-package Persistencia;
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class Login {
+public class VentanaPrincipal {
 
 	private JFrame frame;
 
@@ -15,7 +13,7 @@ public class Login {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login window = new Login();
+					VentanaPrincipal window = new VentanaPrincipal();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,9 +25,10 @@ public class Login {
 	/**
 	 * Create the application.
 	 */
-	public Login() {
+	public VentanaPrincipal() {
 		initialize();
 	}
+	
 
 	/**
 	 * Initialize the contents of the frame.
@@ -38,6 +37,11 @@ public class Login {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
